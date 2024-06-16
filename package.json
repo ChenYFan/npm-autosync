@@ -1,0 +1,17 @@
+{
+  "name": "cyanfalse-privatecdn",
+  "version": "0.0.1",
+  "description": "CyanFalse's PrivateCDN",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "async": "node async.js",
+    "server":"http-server -p 38080 ./data --cors",
+    "init": "node init.js"
+  },
+  "author": "CyanFalse",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
