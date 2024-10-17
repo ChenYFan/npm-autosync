@@ -1,0 +1,59 @@
+{
+    "pagemap": {
+        "latest": "1.4.0",
+        "versions": [
+            "1.4.0"
+        ]
+    },
+    "notyf": {
+        "latest": "3.10.0",
+        "versions": [
+            "3.10.0"
+        ]
+    },
+    "artalk": {
+        "latest": "2.9.1",
+        "versions": [
+            "2.8.2"
+        ]
+    },
+    "lxgw-wenkai-webfont": {
+        "latest": "1.7.0",
+        "versions": [
+            "1.1.0"
+        ]
+    },
+    "lxgw-wenkai-screen-webfont": {
+        "latest": "1.7.0",
+        "versions": [
+            "1.1.0"
+        ]
+    },
+    "@chenyfan/cache-db": {
+        "latest": "1.1.4",
+        "versions": [
+            "0.0.1",
+            "0.0.2",
+            "0.0.3",
+            "0.0.4",
+            "1.1.0",
+            "1.1.1",
+            "1.1.2",
+            "1.1.3",
+            "1.1.4"
+        ]
+    },
+    "@chenyfan/cdnobject": {
+        "latest": "0.0.0-beta-002",
+        "versions": [
+            "0.0.0-beta-001",
+            "0.0.0-beta-002"
+        ]
+    },
+    "@fancyapps/ui": {
+        "latest": "5.0.36",
+        "versions": [
+            "4.0.31"
+        ]
+    }
+}
