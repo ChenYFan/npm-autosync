@@ -28,9 +28,9 @@ jobs:
           
           npm run init
 
-          npm i @chenyfan/npm-autosync
+          # npm i @chenyfan/npm-autosync
 
-          cp node_modules/@chenyfan/npm-autosync/data/npm.json ./data/npm.json
+          # cp node_modules/@chenyfan/npm-autosync/data/npm.json ./data/npm.json
 
           npm run async
           
@@ -48,20 +48,20 @@ jobs:
 
 
         
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM }}
-          package: ./package.json
+      # - uses: JS-DevTools/npm-publish@v1
+      #   with:
+      #     token: ${{ secrets.NPM }}
+      #     package: ./package.json
 
-      - name: Reverse Data
-        run: >
-          cp ./data/npm.json ./data/npm.json.bak
+      # - name: Reverse Data
+      #   run: >
+      #     cp ./data/npm.json ./data/npm.json.bak
 
-          cp -r ./node_modules/@chenyfan/npm-autosync/data/* ./data
+      #     cp -r ./node_modules/@chenyfan/npm-autosync/data/* ./data
 
-          rm -rf ./data/npm.json
-          
-          mv ./data/npm.json.bak ./data/npm.json
+      #     rm -rf ./data/npm.json
+
+      #     mv ./data/npm.json.bak ./data/npm.json
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
