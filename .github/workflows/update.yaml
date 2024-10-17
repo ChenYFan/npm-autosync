@@ -28,6 +28,10 @@ jobs:
           
           echo 'cdn.eurekac.cn' > ./data/CNAME
           
+          git add .
+
+          git commit -m "Update Data"
+
           npm version 0.0.0-$(date +%s)
 
       - name: Deploy
