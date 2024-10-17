@@ -2,7 +2,7 @@ export default {
     "npm":{
         "registry":"https://registry.npmjs.org",
         "packages":{
-            // "cyanblog":".*",
+            "cyanblog":".*",
             // "chenyfan-os":".*",
             // "chenyfan-oss":".*",
             "pagemap":"1.4.0",

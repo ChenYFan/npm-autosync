@@ -6,12 +6,13 @@
   "type": "module",
   "scripts": {
     "async": "node async.js",
-    "server":"http-server -p 38080 ./data --cors",
+    "server": "http-server -p 38080 ./data --cors",
     "init": "node init.js"
   },
   "author": "CyanFalse",
   "license": "ISC",
   "dependencies": {
+    "@chenyfan/npm-autosync": "^0.0.0-1729168953",
     "node-fetch": "^3.3.2"
   }
 }

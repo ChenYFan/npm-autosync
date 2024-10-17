@@ -24,6 +24,10 @@ jobs:
           
           npm run init
 
+          npm i @chenyfan/npm-autosync
+
+          cp node_modules/@chenyfan/npm-autosync/data/npm.json ./data/npm.json
+
           npm run async
           
           echo 'cdn.eurekac.cn' > ./data/CNAME
@@ -41,6 +45,18 @@ jobs:
       - name: Clear GitIgnore
         run: sed -i '1d' .gitignore #To Avoid Publish to NPM
         
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM }}
+          package: ./package.json
+
+      - name: Reverse Data
+        run: >
+          cp ./data/npm.json ./data/npm.json.bak
+          cp -r ./node_modules/@chenyfan/npm-autosync/data/* ./data
+          rm -rf ./data/npm.json
+          mv ./data/npm.json.bak ./data/npm.json
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -48,7 +64,3 @@ jobs:
           publish_dir: ./data
 
 
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM }}
-          package: ./package.json
