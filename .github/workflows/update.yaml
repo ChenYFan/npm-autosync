@@ -24,9 +24,11 @@ jobs:
           
           npm run init
           
-          npm run async
-          
           echo 'cdn.eurekac.cn' > ./data/CNAME
+          
+          git config --global user.email "cyf@zust.zj.cn"
+          
+          git config --global user.name "CyanFalse"
           
           git add .
 
