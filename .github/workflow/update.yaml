@@ -1,0 +1,45 @@
+name: update
+on:
+  - push
+jobs:
+  buildstatic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install & Build
+        run: >
+          npm i
+
+          git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done
+          
+          npm run init
+          
+          npm run async
+          
+          echo 'cdn.eurekac.cn' > ./data/CNAME
+          
+          npm version 0.0.0-$(date +%s)
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: ./data
+
+      - name: Clear GitIgnore
+        run: sed -i '1d' .gitignore #To Avoid Publish to NPM
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM }}
+          package: ./package.json
