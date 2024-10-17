@@ -1,7 +1,7 @@
 {
-  "name": "cyanfalse-privatecdn",
-  "version": "0.0.1",
-  "description": "CyanFalse's PrivateCDN",
+  "name": "@chenyfan/npm-autosync",
+  "version": "0.0.0-20241017",
+  "description": "It could auto sync the npm package to the local folder,to build our own npm registry.",
   "main": "index.js",
   "type": "module",
   "scripts": {

@@ -50,26 +50,25 @@ const asyncNPM = async (config) => {
     for (const packageName in packageList) {
         const npmConfig = new loadAsyncConfig(config.asyncFile)
         const npmConfigData = await npmConfig.read()
-        // Get the package meta
         const packageMeta = await getNPMPackageMeta(packageName)
-        console.log(packageMeta)
-        //先判断有无包
-        if (npmConfigData[packageName] === undefined) {
+        if (!npmConfigData[packageName]) {
             npmConfigData[packageName] = {
                 latest: null,
                 versions: []
             }
-
-            //根据PackageName逐级创建文件夹
             packageName.split("/").reduce((acc, cur) => {
-                acc += "/" + cur
+
                 if (!fs.existsSync(config.asyncFolder + "/" + acc)) {
                     fs.mkdirSync(config.asyncFolder + "/" + acc)
                 }
+                acc += "/" + cur
             })
+            if (!fs.existsSync(config.asyncFolder + "/" + packageName)) {
+                fs.mkdirSync(config.asyncFolder + "/" + packageName)
+            }
         }
-        //先判断latest
         if (npmConfigData[packageName].latest !== packageMeta["dist-tags"].latest) {
+            console.log(`Updating ${packageName}...`)
             npmConfigData[packageName].latest = packageMeta["dist-tags"].latest
             const AllVersions = Object.keys(packageMeta.versions)
             const DiffVersions = AllVersions.filter(version => !npmConfigData[packageName].versions.includes(version))
@@ -81,20 +80,19 @@ const asyncNPM = async (config) => {
                     continue
                 }
                 const SinglePackageMeta = await getNPMSinglePackageMeta(packageName, version)
-
                 const tarballName = SinglePackageMeta.dist.tarball.split("/").pop()
                 const tarballPath = `${config.asyncFolder}/${packageName}/${tarballName}`
                 console.log(tarballPath)
-
-
                 const tarballBuffer = await fetch(SinglePackageMeta.dist.tarball)
                     .then(response => response.buffer())
-
                 fs.writeFileSync(tarballPath, tarballBuffer)
                 fs.mkdirSync(config.asyncFolder + "/" + packageName + "/" + version)
                 await unTarPackage(tarballPath, config.asyncFolder + "/" + packageName + "/" + version)
+                fs.renameSync(config.asyncFolder + "/" + packageName + "/" + version + "/package", config.asyncFolder + "/" + packageName + "/" + version + "/files")
                 npmConfigData[packageName].versions.push(version)
             }
+        } else {
+            console.log(`Skipping ${packageName}...`)
         }
         await npmConfig.write(npmConfigData)
     }
