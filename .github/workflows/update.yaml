@@ -16,6 +16,10 @@ jobs:
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Clear GitIgnore
+        run: sed -i '1d' .gitignore #To Avoid Publish to NPM
+
       - name: Install & Build
         run: >
           npm i
@@ -42,8 +46,7 @@ jobs:
 
           npm version 0.0.0-$(date +%s)
 
-      - name: Clear GitIgnore
-        run: sed -i '1d' .gitignore #To Avoid Publish to NPM
+
         
       - uses: JS-DevTools/npm-publish@v1
         with:
