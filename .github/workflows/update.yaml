@@ -24,7 +24,7 @@ jobs:
           
           npm run init
           
-          npm run build
+          npm run async
           
           echo 'cdn.eurekac.cn' > ./data/CNAME
           
