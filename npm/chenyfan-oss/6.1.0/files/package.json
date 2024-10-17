@@ -1,0 +1,11 @@
+{
+  "name": "chenyfan-oss",
+  "version": "6.1.0",
+  "description": "",
+  "main": "getinfo.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

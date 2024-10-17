@@ -1,0 +1,37 @@
+{
+  "_from": "chenyfan-oss@2.0.1",
+  "_id": "chenyfan-oss@2.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-++gtZoAtY9HLeKPSFEpRzdk+FErgCx1BPZoRbFOdvwIiHR5J/BBCo1HFUxqXPvpM/cSsQK0bSclfq/7v5avxoA==",
+  "_location": "/chenyfan-oss",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "chenyfan-oss@2.0.1",
+    "name": "chenyfan-oss",
+    "escapedName": "chenyfan-oss",
+    "rawSpec": "2.0.1",
+    "saveSpec": null,
+    "fetchSpec": "2.0.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/chenyfan-oss/-/chenyfan-oss-2.0.1.tgz",
+  "_shasum": "1140274ddd812119699d5b15fcfe8bcf19412eb2",
+  "_spec": "chenyfan-oss@2.0.1",
+  "_where": "E:\\VS",
+  "author": "",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "chenyfan-oss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.0.2"
+}

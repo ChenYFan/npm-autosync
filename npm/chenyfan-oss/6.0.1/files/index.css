@@ -1,0 +1,223 @@
+body {
+            font-size: 14px;
+            font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        span {
+            display: block;
+            margin: 0 auto;
+        }
+
+        span[class*="l-"] {
+            height: 4px;
+            width: 4px;
+            background: #000;
+            display: inline-block;
+            margin: 12px 2px;
+
+            border-radius: 100%;
+            -webkit-border-radius: 100%;
+            -moz-border-radius: 100%;
+
+            -webkit-animation: loader 4s infinite;
+            -webkit-animation-timing-function: cubic-bezier(0.030, 0.615, 0.995, 0.415);
+            -webkit-animation-fill-mode: both;
+            -moz-animation: loader 4s infinite;
+            -moz-animation-timing-function: cubic-bezier(0.030, 0.615, 0.995, 0.415);
+            -moz-animation-fill-mode: both;
+            -ms-animation: loader 4s infinite;
+            -ms-animation-timing-function: cubic-bezier(0.030, 0.615, 0.995, 0.415);
+            -ms-animation-fill-mode: both;
+            animation: loader 4s infinite;
+            animation-timing-function: cubic-bezier(0.030, 0.615, 0.995, 0.415);
+            animation-fill-mode: both;
+        }
+
+        span.l-1 {
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+            -ms-animation-delay: 1s;
+            -moz-animation-delay: 1s;
+        }
+
+        span.l-2 {
+            -webkit-animation-delay: 0.8s;
+            animation-delay: 0.8s;
+            -ms-animation-delay: 0.8s;
+            -moz-animation-delay: 0.8s;
+        }
+
+        span.l-3 {
+            -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+            -ms-animation-delay: 0.6s;
+            -moz-animation-delay: 0.6s;
+        }
+
+        span.l-4 {
+            -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+            -ms-animation-delay: 0.4s;
+            -moz-animation-delay: 0.4s;
+        }
+
+        span.l-5 {
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+            -ms-animation-delay: 0.2s;
+            -moz-animation-delay: 0.2s;
+        }
+
+        span.l-6 {
+            -webkit-animation-delay: 0;
+            animation-delay: 0;
+            -ms-animation-delay: 0;
+            -moz-animation-delay: 0;
+        }
+
+        @-webkit-keyframes loader {
+            0% {
+                -webkit-transform: translateX(-30px);
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            50% {
+                -webkit-transform: translateX(30px);
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-moz-keyframes loader {
+            0% {
+                -moz-transform: translateX(-30px);
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            50% {
+                -moz-transform: translateX(30px);
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-keyframes loader {
+            0% {
+                -transform: translateX(-30px);
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            50% {
+                -transform: translateX(30px);
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @-ms-keyframes loader {
+            0% {
+                -ms-transform: translateX(-30px);
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            50% {
+                -ms-transform: translateX(30px);
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        body {
+            background: #f9f7f6;
+            color: #404d5b;
+            font-weight: 500;
+            font-size: 1.05em;
+            font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+        }
+
+        a {
+            color: #2fa0ec;
+            text-decoration: none;
+            outline: none;
+        }
+
+        a:hover,
+        a:focus {
+            color: #74777b;
+        }
+
+        .container {
+            margin: 0 auto;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .content {
+            font-size: 150%;
+            padding: 1em 0;
+        }
+
+        .content h2 {
+            margin: 0 0 2em;
+            opacity: 0.1;
+        }
+
+        .content p {
+            margin: 1em 0;
+            font-size: 0.65em;
+        }
+
+        /*light blue*/
+        /* Header */
+        .header {
+            letter-spacing: -1px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-weight: 600;
+            font-size: 2em;
+            line-height: 1;
+            margin-bottom: 0;
+            font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+        }
+
+        .header h1 span {
+            font-family: "Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo;
+            display: block;
+            font-size: 60%;
+            font-weight: 400;
+            padding: 0.8em 0 0.5em 0;
+            color: #c3c8cd;
+        }
