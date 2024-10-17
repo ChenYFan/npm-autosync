@@ -1,0 +1,11 @@
+{
+  "name": "chenyfan-oss",
+  "version": "3.0.0",
+  "description": "OHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHh",
+  "main": "index.png",
+  "scripts": {
+    "test": "echo \"My OSS!\""
+  },
+  "author": "ChenYFan",
+  "license": "GPL-3.0-or-later"
+}
