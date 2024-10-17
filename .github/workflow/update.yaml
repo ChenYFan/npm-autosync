@@ -19,11 +19,15 @@ jobs:
       - name: Install & Build
         run: >
           npm i
-          git ls-files -z | while read -d '' path; do touch -d "$(git log -1
-          --format="@%ct" "$path")" "$path"; done
+
+          git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done
+          
           npm run init
+          
           npm run build
+          
           echo 'cdn.eurekac.cn' > ./data/CNAME
+          
           npm version 0.0.0-$(date +%s)
 
       - name: Deploy
