@@ -57,7 +57,6 @@ const asyncNPM = async (config) => {
                 versions: []
             }
             packageName.split("/").reduce((acc, cur) => {
-
                 if (!fs.existsSync(config.asyncFolder + "/" + acc)) {
                     fs.mkdirSync(config.asyncFolder + "/" + acc)
                 }
@@ -90,6 +89,7 @@ const asyncNPM = async (config) => {
                 await unTarPackage(tarballPath, config.asyncFolder + "/" + packageName + "/" + version)
                 fs.renameSync(config.asyncFolder + "/" + packageName + "/" + version + "/package", config.asyncFolder + "/" + packageName + "/" + version + "/files")
                 npmConfigData[packageName].versions.push(version)
+                fs.unlinkSync(tarballPath)
             }
         } else {
             console.log(`Skipping ${packageName}...`)
