@@ -56,8 +56,11 @@ jobs:
       - name: Reverse Data
         run: >
           cp ./data/npm.json ./data/npm.json.bak
+
           cp -r ./node_modules/@chenyfan/npm-autosync/data/* ./data
+
           rm -rf ./data/npm.json
+          
           mv ./data/npm.json.bak ./data/npm.json
 
       - name: Deploy

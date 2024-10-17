@@ -3,7 +3,7 @@ export default {
         "registry":"https://registry.npmjs.org",
         "packages":{
             "chenyfan-os":".*",
-            // "chenyfan-oss":".*",
+            "chenyfan-oss":".*",
             "pagemap":"1.4.0",
             "notyf":"3.10.0",
             "artalk":"2.8.2",
