@@ -1,6 +1,6 @@
 export default {
     "npm":{
-        "registry":"https://registry.npmmirror.com",
+        "registry":"https://registry.npmjs.org",
         "packages":{
             "cyanblog":".*",
             "chenyfan-os":".*",
