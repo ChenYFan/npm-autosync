@@ -23,6 +23,8 @@ jobs:
           git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct" "$path")" "$path"; done
           
           npm run init
+
+          npm run async
           
           echo 'cdn.eurekac.cn' > ./data/CNAME
           
@@ -36,14 +38,15 @@ jobs:
 
           npm version 0.0.0-$(date +%s)
 
+      - name: Clear GitIgnore
+        run: sed -i '1d' .gitignore #To Avoid Publish to NPM
+        
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
           publish_dir: ./data
 
-      - name: Clear GitIgnore
-        run: sed -i '1d' .gitignore #To Avoid Publish to NPM
 
       - uses: JS-DevTools/npm-publish@v1
         with:
